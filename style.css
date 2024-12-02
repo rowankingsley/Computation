@@ -1,0 +1,138 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-color: #f3e4d1;
+}
+
+h1 {
+    font-size: 3rem;
+    font-family: "paradigm-pro", serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #3a5635;
+}
+
+p, a {
+    font-size: 1.5rem;
+    font-family: "paradigm-pro", serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 2rem;
+    text-decoration: none;
+    color: #3a5635;
+}
+
+header {
+    padding: 5dvh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.socialLinks {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: top;
+    z-index: 1;
+}
+
+.socialLinks img {
+    margin-left: 0.75rem;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+#instaQR,
+#linkedInQR {
+    margin-left: 0rem;
+    height: auto;
+    width: auto;
+    max-height: 0;
+    max-width: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, max-width 0.5s ease-in-out, opacity 0.5s ease-in-out, visibility 0.5s ease-in-out, margin-left 0.5s ease-in-out;
+}
+
+#instaLink:hover + #instaQR,
+#linkedInLink:hover + #linkedInQR {
+    margin-left: 0.75rem;
+    max-height: 30vh;
+    max-width: 30vw;
+    opacity: 1;
+    visibility: visible;
+}
+
+#email {
+    margin-left: 0rem;
+}
+
+nav {
+    position: absolute;
+    padding: 5dvh;
+    bottom: 0px;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+nav p {
+    display: inline-block;
+}
+
+.illustration {
+    padding: 15dvw;
+    height: 100dvh;
+    width: 100dvw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.illustration img {
+    object-fit: contain;
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+    }
+
+    .socialLinks {
+        margin-top: 1.5rem;
+        justify-content: left;
+        flex-direction: row;
+    }
+
+    #insta {
+        margin-left: 0rem;
+    }
+
+    #email {
+        margin-left: 0.75rem;
+    }
+
+    #instaLink:hover + #instaQR,
+    #linkedInLink:hover + #linkedInQR {
+    margin-left: 0rem;
+    max-height: 0vh;
+    max-width: 0vw;
+    opacity: 0;
+    visibility: hidden;
+}
+
+}
